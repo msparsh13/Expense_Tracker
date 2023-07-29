@@ -1,0 +1,53 @@
+.del-but{
+    height: 40px ;
+    width : 40px ;
+    background-color:  rgba(123, 145, 156 ,1);
+   border-radius: 100%;
+   margin:0 ;
+   float: right;
+}
+
+.del-but:hover{
+    background-color:  rgba(123, 145, 156 ,1);
+   color: red;
+   border-radius: 100%;
+}
+
+.expand{
+    background-color:  rgba(123, 145, 156 ,1);
+}
+
+
+.item{
+    display: flex;
+   flex: content;
+    width : 200px ;
+    margin: 7px ;
+    background-color: rgba(123, 145, 156 ,1) ;
+    border-radius: 10px  ;
+}
+.item > div {
+    display:  flex;
+    
+}
+
+.item > div > * {
+    margin: 5px ;
+}
+
+p{
+    margin-top: 7px;
+}
+
+.details{
+    background-color: rgb(47, 109, 88);
+    position: absolute;
+    margin :20px ;
+    z-index: 10;
+}
+
+
+.fa-xmark{
+    float: top;
+    float: right ;
+}

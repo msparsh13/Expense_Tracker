@@ -1,0 +1,31 @@
+nav{
+    padding : 2rem 1.5rem ;
+width : 374px ;
+height : 100% ;
+background : rgba(252 , 246 , 249 , 0.78) ;
+border : 3px solid #FFFFFF ;
+backdrop-filter : blur(4.5px);
+border-radius : 32px ;
+display : flex ;
+flex-direction : column ;
+justify-content : space-between ;
+gap : 2rem ;}
+
+.active{
+    color : rgba(34 , 34 , 9 , 1) ;
+      i{
+        color: rgba(34 , 34 , 96 , 1) ;
+      }
+   /*this doesnt work*/
+      
+    &::before{
+        content : "" ;
+        left : 0 ;
+        top : 0 ;
+        position: absolute;
+        width : 4px ;
+        height : 100% ;
+        background-color:   #222260 ;
+        border-radius: 0 10px 10px 0;
+    }
+}

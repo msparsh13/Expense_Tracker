@@ -1,0 +1,63 @@
+.total-income{
+    height : 470px ;
+    width : 460px ;
+    background-color :rgba(123, 145, 156 ,0.75)  ;
+    position : absolute ;
+    border-radius: 20px;
+    top : 200px ;
+    left : 100px ;
+    z-index: 10 ;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    align-items: center;
+    justify-content: space-around;
+    color : whitesmoke ;
+
+   
+}
+
+
+.list-box{
+    height : 450px ;
+    width : 630px ;
+    background-color:  rgba(123, 145, 156 ,0.6) ;
+    border-radius: 20px;
+    position : absolute ;
+    top  : 200px ;
+    right : 150px ;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+    z-index: 10;
+    align-content: center;
+    align-items: flex-start;
+    padding: 10px ;
+    z-index: 10;
+ 
+}
+
+
+.income-list{
+    background-color: whitesmoke;
+   height : fit-content ;
+   max-height: 430px;
+   overflow-y: scroll;
+   overflow-x: hidden;
+   border-radius: 20px ;
+   padding: 5px ;
+}
+
+.income-list::-webkit-scrollbar{
+    opacity: 0;
+}
+
+
+
+.chart{
+    height : 350px ;
+    width : 350px ;
+}

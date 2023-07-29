@@ -1,0 +1,77 @@
+const  E_Schema  = require("./E-schema")
+const mongoose = require("mongoose")
+exports.addexpense = async(req , res) =>{
+    const {title , amount , Category , note , date } = req.body ;
+
+    
+    const income = E_Schema({
+        title, 
+        amount ,
+        Category , 
+        note , 
+        date 
+    })
+
+    console.log(income) ;
+   
+
+    try{
+        if(!title || !Category || !date || !note ){
+            return res.status(400).json({message : 'fill every fields'})
+        }
+
+        if(amount <=0 ){
+            return res.status(400).json({message : "amount should be positive"})
+
+
+        }
+      await  income.save()
+       res.send(income.data)
+        console.log("expense added") ;
+       
+    } catch(error){
+        console.log(error) ;
+    }
+}
+
+
+
+
+
+
+exports.delexp= async (req , res) =>{
+    
+    
+   const {x} =req.params.id
+await E_Schema.findByIdAndDelete(req.params.id)
+ .catch((error)=>{
+    console.log(error)
+ })
+ res.send(req.params.id) ;
+
+
+    }
+
+
+exports.hello = async (req , res) =>{
+    res.send(req.params.id) ;
+}
+
+
+
+
+exports.getexp=  async (req , res) =>{
+    try{
+        const inc=  await E_Schema.find()
+        res.status(200).json(inc)
+        console.log("working") ;
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+
+exports.getoneiexp = async (req , res) =>{
+    const x = await  E_Schema.findById(req.params.id) ;
+     res.send(x)
+ }

@@ -1,0 +1,35 @@
+div > input{
+    background : white  ;
+    width : 200px ;
+    height : 40px ;
+    border-radius: 5px ;
+    margin : 5px ;
+}
+
+select {
+    background : white  ;
+    width : 150px ;
+    height : 30px ;
+    border-radius: 5px ;
+    margin : 5px ; 
+    margin-left: 15px ;
+}
+option{
+    border : 2px ;
+    border-style:initial;
+    border-color: black;
+}
+div > textarea{
+    background : white  ;
+    height : 130px ;
+    border-radius: 5px ;
+    margin : 5px ;
+}
+
+
+.submitbut{
+    height : 40px ;
+    width : 150px ;
+   border-radius: 10px;
+   margin-left: 15px;
+}

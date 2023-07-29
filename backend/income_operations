@@ -1,0 +1,73 @@
+const  I_Schema  = require("./schema")
+const mongoose = require("mongoose")
+
+
+
+
+
+
+
+
+
+
+exports.delinc= async (req , res) =>{
+const {x} =req.params.id
+  await I_Schema.findByIdAndDelete(req.params.id)
+ .catch((error)=>{
+    console.log(error)
+ })
+ res.send(req.params.id) ;
+
+
+
+}
+
+exports.getoneinc = async (req , res) =>{
+   const x = await  I_Schema.findById(req.params.id) ;
+    res.send(x)
+}
+
+
+
+
+exports.getinc=  async (req , res) =>{
+    try{
+        const inc=  await I_Schema.find()
+        res.send(inc)
+        console.log("working") ;
+    }
+    catch(err){
+        console.log(err)
+    }
+}
+
+
+exports.addincome = async(req , res) =>{
+    const {title , amount , Category , note , date } = req.body ;
+    const income = I_Schema({
+        title, 
+        amount ,
+        Category , 
+        note , 
+        date 
+    })
+        
+    try{
+        if(!title || !Category || !date || !note ){
+            return res.status(400).json({message : 'fill every fields'})
+        }
+
+        if(amount <=0 ){
+            return res.status(400).json({message : "amount should be positive"})
+
+
+        }
+      await  income.save()
+       res.send(income.data)
+        console.log("income added") ;
+       
+    } catch(error){
+        console.log(error) ;
+    }
+}
+
